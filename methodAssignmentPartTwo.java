@@ -5,6 +5,8 @@
 * Description: Method summative assignment part two
 **/
 
+import java.util.Scanner;
+
 class methodAssignmentPartTwo {
     public static void main(String[] args){
 
