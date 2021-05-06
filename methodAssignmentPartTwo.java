@@ -22,7 +22,7 @@ class methodAssignmentPartTwo {
 
         // a temporary double
         double[] deleteLater = {700, 400, 176, 80, 70, 60, 50, 45, 40};
-
+        findPercent(deleteLater);
 
         // Detect for errors when generating the results file
         try {
