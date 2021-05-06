@@ -5,7 +5,6 @@
 * Description: Method summative assignment part two
 **/
 
-import java.util.Scanner;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.BufferedWriter;
