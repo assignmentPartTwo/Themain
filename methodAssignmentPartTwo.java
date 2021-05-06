@@ -33,6 +33,21 @@ class methodAssignmentPartTwo {
         }
     }
     /**
+     * Description: a method to calculate the percentage of how frequent each number 
+     *              appears in the sale file. 
+     *    % = (frequency / number of rows in csv file) x 100 %
+     * 
+     * @author Ian
+     * @param frequency   The array containing the frequency of #1 - 9 being the first number
+     */
+    public static void findPercent(double[] frequency) {
+        for (int i = 0; i < frequency.length; i++) {
+            // going through each index to find the percentage, rounded to
+            // one decimal place
+            frequency[i] = Math.round( frequency[i] / 16.21 * 10.0 )/10.0;
+        }
+    }
+    /**
      * Description: output the percentage of each number as a chart in a new
      *              csv file.
      * @author Ian
