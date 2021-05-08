@@ -7,7 +7,9 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintWriter;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -79,7 +81,7 @@ class methodAssignmentPartTwo {
         path = "sales.csv";
 
         //Parsing a csv file into BufferedReader class constructor
-        Bufferedreader br = new BufferedReader(new FileReader(path));
+        BufferedReader br = new BufferedReader(new FileReader(path));
 
         // Variable line that equals to nothing right now
         String line = "";
