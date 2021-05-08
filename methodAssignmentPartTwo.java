@@ -76,6 +76,13 @@ class methodAssignmentPartTwo {
         br.close();     // closing buffer writer
         fr.close();     // closing file writer
     }
+    /**
+     * Description: scans the sales.csv file
+     * 
+     * @author William Wu
+     * @param path the path to the csv file
+     * @throws FileNotFoundException if the file is not found exception has occured when scanning the file
+     */
     public static void readFile(String path) throws FileNotFoundException{
         // The path to the csv file
         path = "sales.csv";
