@@ -23,17 +23,17 @@ class methodAssignmentPartTwo {
         // integer in the indexes by 1621 or do it right after storing the frequency into the array
         // percentage: frquency of each number divide by 1621  <-- parameter for bar graph 
 
-        // a temporary double
-        double[] deleteLater = {700, 400, 176, 80, 70, 60, 50, 45, 40};
-        findPercent(deleteLater);   // call findPercent method
+        // the array that will store the percent of frequency
+        double[] frequency = new double[9];
 
-        // Detect for errors when generating the results file
+        // try and catch error if no file is found
         try {
-            exportChart(deleteLater);   // call exportChart method
+            readFile(frequency);        // call readFile method
         }
-        catch (Exception e) {
-            System.out.println("File error");
+        catch(FileNotFoundException e){
+            e.printStackTrace();        // output file not found results
         }
+
     }
     /**
      * Description: a method to calculate the percentage of how frequent each number 
@@ -48,6 +48,14 @@ class methodAssignmentPartTwo {
             // going through each index to find the percentage, rounded to
             // one decimal place
             frequency[i] = Math.round( frequency[i] / 16.21 * 10.0 )/10.0;
+        }
+
+        // Detect for errors when generating the results file
+        try {
+            exportChart(frequency);   // call exportChart method
+        }
+        catch (IOException e) {
+            System.out.println("An input/output error has occured");
         }
     }
     /**
