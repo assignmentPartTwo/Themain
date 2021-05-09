@@ -24,20 +24,20 @@ class methodAssignmentPartTwo {
         // try and catch error if no file is found
         try {
             readFile(frequency);        // call readFile method
-        }
-        catch(FileNotFoundException e){
-            e.printStackTrace();        // output file not found results
-        }
-        finally {
+
             // fraud validation if number 1 (index 0) appears within the range of 29 - 32 %
             int min = 29;
             int max = 32;
+            
             if (frequency[0] >= min && frequency[0] <= max) {
                 System.out.println("No fraud has occured");
             }
             else {
                 System.out.println("A fraud has likely occured");
             }
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();        // output file not found results
         }
     }
     /**
