@@ -16,12 +16,6 @@ import java.io.IOException;
 
 class methodAssignmentPartTwo {
     public static void main(String[] args){
-        // use a for loop to identify the frequency of numbers 1- 9 appearing as the
-        // first number in the sales csv. store the integer into an array from indexes
-        // 1 to 8 (length 9).
-        // call a method that in a for loop, and parameter of the freqeuncy array, divide each
-        // integer in the indexes by 1621 or do it right after storing the frequency into the array
-        // percentage: frquency of each number divide by 1621  <-- parameter for bar graph 
 
         // the array that will store the percent of frequency
         double[] frequency = new double[9];
@@ -88,12 +82,12 @@ class methodAssignmentPartTwo {
      * Description: scans the sales.csv file
      * 
      * @author William Wu
-     * @param path the path to the csv file
+     * @param path the double array to store the frequency of digits
      * @throws FileNotFoundException if the file is not found exception has occured when scanning the file
      */
-    public static void readFile(String path) throws FileNotFoundException{
+    public static void readFile(double[] hz) throws FileNotFoundException{
         // The path to the csv file
-        path = "sales.csv";
+        String path = "sales.csv";
 
         //Parsing a csv file into BufferedReader class constructor
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -108,6 +102,15 @@ class methodAssignmentPartTwo {
             while((line = br.readLine()) != null){
                 // A string array that seperates the different infos by the comma in the file
                 String[] value = line.split(",");
+
+                // for loop that compares numbers 1 - 9 with the beginning number of each row of sales
+                for (int i = 1; i < 10; i ++) {
+                    int firstNum = value[1].charAt(0);      // the char at the first index of the sales amount
+                    // condition: the value of the first number equals i(1- 9)
+                    if (Character.getNumericValue(firstNum) == i) {
+                        hz[i-1]++;    //accumulating the frequency of integers 1 to 9 being the fist number 
+                    }
+                }
             }
         }
         // The two catch files are for if the file is not found from the file path, they will print the files' stack trace
@@ -128,6 +131,8 @@ class methodAssignmentPartTwo {
                     e.printStackTrace();
                 }
             }
+
+            findPercent(hz);   // call findPercent method
         }
     }
 }
